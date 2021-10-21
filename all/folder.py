@@ -8,6 +8,7 @@ try:
 except IndexError:
     pass
 
+
 def txt(there_look: str):
     with open(there_look) as f:
         try:
@@ -21,7 +22,7 @@ def size(there_look: str):
     return str(os.path.getsize(there_look)) + ' bytes'
 
 
-def tree(there_look : str):
+def tree(there_look: str):
     results = {}
     for (dirthere_look, dirnames, filenames) in os.walk(there_look):
         parts = dirthere_look.split(os.sep)
@@ -39,6 +40,4 @@ def tree(there_look : str):
 
     return json.dumps(results)
 
-#print(tree(there_look))
-
-
+# print(tree(there_look))

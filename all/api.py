@@ -9,8 +9,6 @@ app = FastAPI()
 async def root():
    return {'Hello'}
 
-@app.get('/1/{a}')
+@app.get('/{a}')
 async def work(a:str):
-   a = a.replace('-', '/')
-   b = tree('/' + a)
-   return b
+   return tree('/' + a.replace('-', '/'))
