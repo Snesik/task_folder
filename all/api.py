@@ -11,5 +11,6 @@ async def root():
 
 @app.get('/1/{a}')
 async def work(a:str):
+   a = a.replace('-', '/')
    b = tree('/' + a)
    return b
