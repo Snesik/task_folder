@@ -1,11 +1,12 @@
+import json
 import os
 import os.path
-import json
 import sys
 
-
-there_look = sys.argv[1]
-
+try:
+    there_look = sys.argv[1]
+except IndexError:
+    pass
 
 def txt(there_look: str):
     with open(there_look) as f:
@@ -39,4 +40,5 @@ def tree(there_look : str):
     return json.dumps(results)
 
 
-print(tree(there_look))
+
+
